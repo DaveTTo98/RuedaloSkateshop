@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Ruedalo Skateshop</string>
+    <!-- Home Strings -->
+    <string name="who_are_you">¿Quién eres?</string>
+    <string name="im_user">Soy Usuario</string>
+    <string name="im_admin">Soy Admin</string>
+    <!-- Login Strings -->
+    <string name="login">Inicia Sesión</string>
+    <string name="begin_adv">y comienza la aventura</string>
+    <string name="remember_me">Recuérdame</string>
+    <string name="password_forgot">¿ Olvidaste la contraseña ?</string>
+    <string name="init">Ingresar</string>
+    <string name="still_no_account">¿ Aún no tienes cuenta ?</string>
+    <string name="create_here">Créala Acá</string>
+
+    <!-- Register Strings -->
+    <string name="register_hero">BIENVENID@ AL EQUIPO</string>
+    <string name="register_subtitle">Regístrate y has parte de la familia más grande del skateboarding
+colombiano</string>
+    <string name="terms">He leído y aceptado los </string>
+    <string name="terms_condition">Términos y condiciones</string>
+    <string name="register_btn_text">Unirme al Crew</string>
+
+    <!-- Recover Strings -->
+    <string name="recover_hero">¿ OLVIDASTE TU CONTRASEÑA ?</string>
+    <string name="recover_subtitle">Escríbe tu correo electrónico y recibirás un código</string>
+    <string name="recover_btn">Envíar Código</string>
+
+</resources>
