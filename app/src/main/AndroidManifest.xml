@@ -21,7 +21,19 @@
         </activity>
 
         <activity android:name=".activities.HomeActivity"
+            android:exported="false" />
+        <activity android:name=".activities.LoginActivity"
             android:exported="false"/>
+        <activity android:name=".activities.RegisterActivity"
+            android:exported="false"/>
+        <activity android:name=".activities.RecoverActivity"
+            android:exported="false"/>
+        <activity android:name=".activities.MainActivity"
+            android:exported="false"/>
+
+
+
+
 
     </application>
 

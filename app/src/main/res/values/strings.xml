@@ -25,5 +25,27 @@ colombiano</string>
     <string name="recover_hero">¿ OLVIDASTE TU CONTRASEÑA ?</string>
     <string name="recover_subtitle">Escríbe tu correo electrónico y recibirás un código</string>
     <string name="recover_btn">Envíar Código</string>
+    <string name="who_you_are">¿QUIÉN ERES?</string>
+    <string name="name">nombre</string>
+    <string name="welcome_text">TE DAMOS LA BIENVENIDA</string>
+    <string name="welcome_team">TE DAMOS LA BIENVENIDA AL EQUIPO</string>
+    <string name="lastnames">Apellidos</string>
+    <string name="email">Email</string>
+    <string name="tel">Teléfono</string>
+    <string name="rep_password">Repetir Contraseña</string>
+    <string name="read_accept">He leido y aceptado los</string>
+    <string name="terms_conditions">Términos y condiciones</string>
+    <string name="join_crew">unirme al crew</string>
+    <string name="welcome_hero">Regístrate y has parte de la familia más grande del skateboarding colombiano</string>
+    <string name="rider">Rider</string>
+    <string name="passw_input">Contraseña</string>
+    <string name="greetings_welcome">HOLA</string>
+    <string name="applogo_string">AppLogo</string>
+    <string name="app_logo_string">Logo de la app</string>
+    <string name="open">Menu abierto\n</string>
+    <string name="close">Menú Cerrado</string>
+    <string name="fontanar_skatepark">Fontanar Skatepark</string>
+    <string name="fontanar_description">Un ejemplar digno de la SLS en Bogotá</string>
+    <string name="see_in_map">Ver en el mapa</string>
 
 </resources>
