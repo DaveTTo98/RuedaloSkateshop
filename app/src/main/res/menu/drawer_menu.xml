@@ -9,6 +9,10 @@
         android:id="@+id/learnFragment"
         android:title="Tutoriales"
         />
+    <item
+        android:id="@+id/profileFragment"
+        android:title="Perfil"
+        />
 
 
 </group>

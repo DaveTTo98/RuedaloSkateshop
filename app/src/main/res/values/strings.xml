@@ -47,5 +47,8 @@ colombiano</string>
     <string name="fontanar_skatepark">Fontanar Skatepark</string>
     <string name="fontanar_description">Un ejemplar digno de la SLS en Bogotá</string>
     <string name="see_in_map">Ver en el mapa</string>
+    <string name="places_title">¿DÓNDE SERÁ TU PRÓXIMO BEST TRICK?</string>
+    <string name="tercer_milenio_skatepark">Tercer Milenio Skatepark</string>
+    <string name="japon_DIY_skatepark">Japón DIY Skatepark</string>
 
 </resources>

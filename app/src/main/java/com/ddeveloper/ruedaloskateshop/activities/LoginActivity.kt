@@ -63,9 +63,13 @@ class LoginActivity: AppCompatActivity() {
 
     }
 
+
+
     private fun nameVal(): Boolean{
         val nameCheker = sharedPreferences.getString("nombre", "")
         val name = ridername.text.toString().trim()
+
+
 
         if(name != nameCheker){
             Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show()

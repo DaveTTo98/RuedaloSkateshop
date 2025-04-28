@@ -14,5 +14,9 @@
         android:id="@+id/learnFragment"
         android:name="com.ddeveloper.ruedaloskateshop.fragments.LearnFragment"
         adroid:label="Tutoriales"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.ddeveloper.ruedaloskateshop.fragments.Profile_Fragment"
+        adroid:label="Perfil"/>
 
 </navigation>
