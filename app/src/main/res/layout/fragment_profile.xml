@@ -30,7 +30,7 @@
             android:id="@+id/rider_name"
             android:layout_width="80dp"
             android:layout_height="20dp"
-            android:text=""/>
+            android:text="Juan"/>
 
     </LinearLayout>
 
