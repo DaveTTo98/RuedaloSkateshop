@@ -22,86 +22,86 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginBottom="40dp">
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/card"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="8dp"-->
+<!--            android:layout_marginBottom="40dp">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="365dp"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="365dp"-->
+<!--                android:orientation="vertical">-->
 
-                <!-- Media -->
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="194dp"
-                    android:contentDescription="skatepark Fontanar"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/fontanar" />
+<!--                &lt;!&ndash; Media &ndash;&gt;-->
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="194dp"-->
+<!--                    android:contentDescription="skatepark Fontanar"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    app:srcCompat="@drawable/fontanar" />-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:padding="16dp">-->
 
-                    <!-- Title, secondary and supporting text -->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/fontanar_skatepark"
-                        android:textAppearance="?attr/textAppearanceTitleMedium" />
+<!--                    &lt;!&ndash; Title, secondary and supporting text &ndash;&gt;-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="@string/fontanar_skatepark"-->
+<!--                        android:textAppearance="?attr/textAppearanceTitleMedium" />-->
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/fontanar_description"
-                        android:textAppearance="?attr/textAppearanceBodyMedium"
-                        android:textColor="?android:attr/textColorSecondary" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="8dp"-->
+<!--                        android:text="@string/fontanar_description"-->
+<!--                        android:textAppearance="?attr/textAppearanceBodyMedium"-->
+<!--                        android:textColor="?android:attr/textColorSecondary" />-->
 
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-                <!-- Buttons -->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:orientation="horizontal">
+<!--                &lt;!&ndash; Buttons &ndash;&gt;-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    android:orientation="horizontal">-->
 
-                    <com.google.android.material.button.MaterialButton
-                        style="?attr/borderlessButtonStyle"
-                        android:layout_width="107dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:backgroundTint="@color/init_background"
-                        android:gravity="center"
-                        android:text="Ver más"
-                        android:textAllCaps="true"
-                        android:textColor="@color/white"
-                        app:cornerRadius="10dp" />
+<!--                    <com.google.android.material.button.MaterialButton-->
+<!--                        style="?attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="107dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginEnd="8dp"-->
+<!--                        android:backgroundTint="@color/init_background"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="Ver más"-->
+<!--                        android:textAllCaps="true"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        app:cornerRadius="10dp" />-->
 
-                    <com.google.android.material.button.MaterialButton
-                        style="?attr/borderlessButtonStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="8dp"
-                        android:backgroundTint="@color/beige"
-                        android:gravity="center"
-                        android:text="¿Cómo llegar?"
-                        android:textAllCaps="true"
-                        android:textColor="@color/white"
-                        app:cornerRadius="10dp" />
+<!--                    <com.google.android.material.button.MaterialButton-->
+<!--                        style="?attr/borderlessButtonStyle"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginEnd="8dp"-->
+<!--                        android:backgroundTint="@color/beige"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="¿Cómo llegar?"-->
+<!--                        android:textAllCaps="true"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        app:cornerRadius="10dp" />-->
 
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-        </com.google.android.material.card.MaterialCardView>
+<!--        </com.google.android.material.card.MaterialCardView>-->
 
         <!-- Card 2 -->
         <com.google.android.material.card.MaterialCardView
