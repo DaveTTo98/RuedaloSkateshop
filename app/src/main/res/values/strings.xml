@@ -51,4 +51,8 @@ colombiano</string>
     <string name="tercer_milenio_skatepark">Tercer Milenio Skatepark</string>
     <string name="japon_DIY_skatepark">Japón DIY Skatepark</string>
 
+    <!-- Key Api oAUTH -->
+
+    <string name="api_Key">1012372663209-oaasvi5tdumltc32n3duutkaa69d6pl1.apps.googleusercontent.com</string>
+
 </resources>
