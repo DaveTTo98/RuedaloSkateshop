@@ -27,7 +27,7 @@
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="450dp"
+        android:layout_height="500dp"
         android:background="@color/variant_white"
         android:orientation="vertical"
         android:gravity="center"
@@ -113,6 +113,28 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.754"
             android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/BTgoogleLogin"
+            android:layout_width="250dp"
+            android:layout_height="52dp"
+            android:backgroundTint="@color/white"
+            android:text="@string/google_login"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            app:cornerRadius="5dp"
+            app:icon="@drawable/google_icon"
+            app:iconSize="20dp"
+            app:iconTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.838"
+            app:strokeColor="@color/init_background"
+            app:strokeWidth="2dp" />
 
 
     </LinearLayout>
