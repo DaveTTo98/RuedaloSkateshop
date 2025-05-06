@@ -9,10 +9,18 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ddeveloper.ruedaloskateshop.R
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.auth.api.signin.internal.GoogleSignInOptionsExtensionParcelable
 
 class LoginActivity: AppCompatActivity() {
 
     //VARIABLES
+    private lateinit var googleButton: Button
+    private lateinit var mGoogleSignInClient: GoogleSignInClient
+    private val RC_SIGN_IN = 123
+    private val TAG = "GoogleSignIn"
     private lateinit var ridername: EditText
     private lateinit var riderpassword: EditText
     private lateinit var RegisterButton: TextView
@@ -25,6 +33,21 @@ class LoginActivity: AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        //CONFIGURAR GOOGLE SIGN IN
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .requestProfile()
+            .build()
+
+        //CREAR CLIENTE DE GOOGLE
+        var mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        googleButton = findViewById(R.id.BTgoogleLogin)
+        googleButton.setOnClickListener {
+            signIn()
+        }
+
+
 
         //INICIALIZAR VARIABLES
         ridername = findViewById(R.id.rider_field)
