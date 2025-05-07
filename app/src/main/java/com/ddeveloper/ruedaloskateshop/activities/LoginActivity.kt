@@ -3,6 +3,7 @@ package com.ddeveloper.ruedaloskateshop.activities
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -10,9 +11,11 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ddeveloper.ruedaloskateshop.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.auth.api.signin.internal.GoogleSignInOptionsExtensionParcelable
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 
 class LoginActivity: AppCompatActivity() {
 
@@ -40,14 +43,14 @@ class LoginActivity: AppCompatActivity() {
             .requestProfile()
             .build()
 
-        //CREAR CLIENTE DE GOOGLE
-        var mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        //CREAR CLIENTE DE GOOGLE SIGIN
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+
         googleButton = findViewById(R.id.BTgoogleLogin)
-        googleButton.setOnClickListener {
-            signIn()
+
+        googleButton.setOnClickListener{
+            sigIn()
         }
-
-
 
         //INICIALIZAR VARIABLES
         ridername = findViewById(R.id.rider_field)
@@ -86,7 +89,49 @@ class LoginActivity: AppCompatActivity() {
 
     }
 
+    private fun sigIn() {
+        val signInIntent = mGoogleSignInClient.signInIntent
+        startActivityForResult(signInIntent,RC_SIGN_IN)
+    }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == RC_SIGN_IN){
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            handleSignResult(task)
+        }
+    }
+
+    private fun handleSignResult(completedTask: Task<GoogleSignInAccount>){
+        try{
+            val account = completedTask.getResult(ApiException::class.java)
+
+            //login exitoso
+            Log.d(TAG, "signInSucces: ${account.displayName}" )
+            Toast.makeText(this, "Bienvenido ${account.displayName}", Toast.LENGTH_SHORT).show()
+
+            //IR A MAIN ACTIVITY
+            intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("USER_EMAIL", account.email)
+            intent.putExtra("USER_NAME", account.displayName)
+            startActivity(intent)
+        }catch (e: ApiException){
+            //ERROR AL INICIAR SESION
+            Log.e(TAG, "signInResult:failed code= ${e.statusCode}")
+
+            val mensaje = when(e.statusCode){
+                7 -> "Error de conexión. Revisa tu conexión a internet"
+                10 -> "Error de configuración. Valida la huella SHA-1"
+                1500 -> "Error de Googe Play Service"
+                12501 ->"Error de sesión, cancelado por el usuario"
+                else -> "Error al iniciar sesión(codigo: ${e.statusCode})"
+            }
+            Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    //FIELDS VALIDATORS
 
     private fun nameVal(): Boolean{
         val nameCheker = sharedPreferences.getString("nombre", "")
