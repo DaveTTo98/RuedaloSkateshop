@@ -55,7 +55,13 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.placesFragment,
-                R.id.learnFragment
+                R.id.learnFragment,
+                R.id.ShopFragment,
+                R.id.profileFragment,
+                R.id.cartFragment,
+                R.id.categoryFragment,
+                R.id.InicioFragment,
+                R.id.mapFragment
             ), drawerLayout
         )
 

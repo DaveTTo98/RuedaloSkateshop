@@ -2,6 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 <group android:checkableBehavior="single">
     <item
+        android:id="@+id/inicioFragment"
+        android:title="Inicio"/>
+    <item
         android:id="@+id/placesFragment"
         android:title="Skateparks"
         />
@@ -14,9 +17,14 @@
         android:title="Perfil"
         />
     <item
-        android:id="@+id/shopFragment"
+        android:id="@+id/ShopFragment"
         android:title="Tienda"
         />
+    <item
+        android:id="@+id/cartFragment"
+        android:title="Carrito"
+        />
+
 
 
 </group>

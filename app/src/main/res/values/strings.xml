@@ -56,5 +56,9 @@ colombiano</string>
     <string name="api_Key">1012372663209-oaasvi5tdumltc32n3duutkaa69d6pl1.apps.googleusercontent.com</string>
 
     <string name="google_login">Ingresar con Google</string>
+    <string name="search_prod">Busca un producto</string>
+    <string name="buscar">Buscar</string>
+    <string name="cat_text">Categorías</string>
+    <string name="see_all">Ver todas</string>
 
 </resources>

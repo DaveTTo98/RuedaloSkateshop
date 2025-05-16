@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCart"
+        android:layout_width="match_parent"
+        android:layout_height="517dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/txtTotalCarrito"
+        android:layout_width="match_parent"
+        android:layout_height="95dp"
+        android:background="@color/variant_white"
+        android:gravity="end"
+        android:padding="12dp"
+        android:text="Total a pagar: $0.00"
+        android:textColor="@color/init_background"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</LinearLayout>
