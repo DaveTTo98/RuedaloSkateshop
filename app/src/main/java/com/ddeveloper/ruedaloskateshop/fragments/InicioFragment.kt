@@ -6,7 +6,9 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ddeveloper.ruedaloskateshop.R
@@ -26,7 +28,8 @@ class InicioFragment : Fragment() {
 
     private val productosDestacados = listOf(
         Producto(1, "Camiseta DC Shoes", 249.00, R.drawable.dc_shirt, categoria = "Ropa"),
-        Producto(2, "Buso Nike Sb", 349.00, R.drawable.buso_nike, categoria = "Ropa")
+        Producto(2, "Gorra Vans", 349.00, R.drawable.vans_cap, categoria = "Accesorios"),
+        Producto(3, "Board Nyjah Monster edition", 420000.0, R.drawable.nyjah_board, categoria = "Accesorios")
     )
 
     private val imagenesCarrusel = listOf(
@@ -47,11 +50,17 @@ class InicioFragment : Fragment() {
         carruselAdapter = CarruselAdapter(imagenesCarrusel)
         recyclerCarrusel.adapter = carruselAdapter
 
-        // Productos destacados
+
         recyclerInicio = view.findViewById(R.id.recyclerInicio)
         recyclerInicio.layoutManager = LinearLayoutManager(requireContext())
         homeAdapter = HomeAdapter(productosDestacados)
         recyclerInicio.adapter = homeAdapter
+
+
+        val btnVerRopa: Button = view.findViewById(R.id.btnRopa)
+        btnVerRopa.setOnClickListener {
+            findNavController().navigate(R.id.ropaFragment)
+        }
 
         startAutoScroll()
     }

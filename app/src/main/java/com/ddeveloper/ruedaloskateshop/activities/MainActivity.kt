@@ -61,7 +61,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.cartFragment,
                 R.id.categoryFragment,
                 R.id.InicioFragment,
-                R.id.mapFragment
+                R.id.mapFragment,
+                R.id.ropaFragment
             ), drawerLayout
         )
 

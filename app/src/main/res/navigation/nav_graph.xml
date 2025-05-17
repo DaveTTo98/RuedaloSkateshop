@@ -58,4 +58,13 @@
         android:id="@+id/categoryFragment"
         android:name="com.ddeveloper.ruedaloskateshop.fragments.CategoriesFragment"/>
 
+    <fragment
+        android:id="@+id/ropaFragment"
+        android:name="com.ddeveloper.ruedaloskateshop.fragments.ClothesFragment"
+        android:label="RopaFragment">
+    </fragment>
+
+
+
+
 </navigation>
