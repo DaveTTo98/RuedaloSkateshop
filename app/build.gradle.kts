@@ -49,7 +49,8 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation (libs.okhttp)
     implementation (libs.google.android.maps.utils)
-
+    implementation (libs.material.v190)
+    implementation (libs.glide)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.media3.common.ktx)
     implementation(libs.androidx.navigation.ui.ktx)

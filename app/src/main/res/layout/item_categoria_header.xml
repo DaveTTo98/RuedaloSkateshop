@@ -1,0 +1,23 @@
+<!-- res/layout/item_categoria.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/iconCategoria"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/dc_banner"
+    android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/txtCategoriaTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</LinearLayout>

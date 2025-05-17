@@ -1,21 +1,75 @@
 package com.ddeveloper.ruedaloskateshop.fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ddeveloper.ruedaloskateshop.R
+import com.ddeveloper.ruedaloskateshop.adapter.CarruselAdapter
+import com.ddeveloper.ruedaloskateshop.adapter.HomeAdapter
+import com.ddeveloper.ruedaloskateshop.model.ImagenCarrusel
+import com.ddeveloper.ruedaloskateshop.model.Producto
 
-class InicioFragment: Fragment() {
+class InicioFragment : Fragment() {
+
+    private lateinit var recyclerInicio: RecyclerView
+    private lateinit var recyclerCarrusel: RecyclerView
+    private lateinit var homeAdapter: HomeAdapter
+    private lateinit var carruselAdapter: CarruselAdapter
+    private val handler = Handler(Looper.getMainLooper())
+    private var carruselPosition = 0
+
+    private val productosDestacados = listOf(
+        Producto(1, "Camiseta DC Shoes", 249.00, R.drawable.dc_shirt, categoria = "Ropa"),
+        Producto(2, "Buso Nike Sb", 349.00, R.drawable.buso_nike, categoria = "Ropa")
+    )
+
+    private val imagenesCarrusel = listOf(
+        ImagenCarrusel(R.drawable.fontanar, "FONTANAR SKATEPARK"),
+        ImagenCarrusel(R.drawable.tercer_milenio, "TERCER MILENIO SKATEPARK"),
+        ImagenCarrusel(R.drawable.japon_kenedy, "JAPÓN DIY SKATEPARK"),
+    )
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_inicio, container, false)
-        return view
+    ): View? = inflater.inflate(R.layout.fragment_inicio, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        // Carrusel
+        recyclerCarrusel = view.findViewById(R.id.recyclerCarrusel)
+        recyclerCarrusel.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        carruselAdapter = CarruselAdapter(imagenesCarrusel)
+        recyclerCarrusel.adapter = carruselAdapter
+
+        // Productos destacados
+        recyclerInicio = view.findViewById(R.id.recyclerInicio)
+        recyclerInicio.layoutManager = LinearLayoutManager(requireContext())
+        homeAdapter = HomeAdapter(productosDestacados)
+        recyclerInicio.adapter = homeAdapter
+
+        startAutoScroll()
     }
 
+    private fun startAutoScroll() {
+        handler.postDelayed(object : Runnable {
+            override fun run() {
+                if (carruselAdapter.itemCount == 0) return
+
+                recyclerCarrusel.smoothScrollToPosition(carruselPosition)
+                carruselPosition = (carruselPosition + 1) % carruselAdapter.itemCount
+                handler.postDelayed(this, 2500)
+            }
+        }, 2500)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        handler.removeCallbacksAndMessages(null)
+    }
 }

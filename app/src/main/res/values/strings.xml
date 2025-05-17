@@ -60,5 +60,9 @@ colombiano</string>
     <string name="buscar">Buscar</string>
     <string name="cat_text">Categorías</string>
     <string name="see_all">Ver todas</string>
+    <string name="productos_recomendado">PRODUCTOS RECOMENDADO</string>
+    <string name="productos_recomendados">PRODUCTOS RECOMENDADOS</string>
+    <string name="categorias">CATEGORÍAS</string>
+    <string name="skateparks_de_la_semana">SKATEPARKS DE LA SEMANA</string>
 
 </resources>

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/variant_white"
     android:orientation="vertical"
     android:padding="10dp">
@@ -72,14 +73,14 @@
                     >
 
                     <TextView
-                        android:layout_width="204dp"
+                        android:layout_width="205dp"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/montserratbold"
                         android:gravity="center"
-                        android:text="@string/cat_text"
+                        android:text="@string/categorias"
                         android:textAllCaps="true"
                         android:textColor="@color/black"
-                        android:textSize="30dp"
-                        android:textStyle="bold" />
+                        android:textSize="25dp" />
 
                     <LinearLayout
                         android:layout_width="200dp"
@@ -94,7 +95,7 @@
                             android:text="@string/see_all"
                             android:textAllCaps="true"
                             android:textColor="@color/init_background"
-                            android:textStyle="bold" />
+                            android:fontFamily="@font/comfortaabold"/>
 
                         <ImageView
                             android:layout_width="15dp"
@@ -271,16 +272,52 @@
                     </com.google.android.material.card.MaterialCardView>
 
 
-
-
                 </LinearLayout>
 
                 <!--SECTION 2 - PRODUCTS-->
 
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserratbold"
+                    android:gravity="center"
+                    android:text="@string/productos_recomendados"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+
+                 <!--PRODUCTOS DESTACADOS-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerInicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp"/>
 
 
 
+                <!--CARRUSEL-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserratbold"
+                    android:gravity="end"
+                    android:text="@string/skateparks_de_la_semana"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerCarrusel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:orientation="horizontal"
+                    android:overScrollMode="never"
+                    android:clipToPadding="false"
+                    android:layout_marginBottom="25dp"/>
 
 
             </LinearLayout>
