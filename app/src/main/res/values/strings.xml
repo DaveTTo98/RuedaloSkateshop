@@ -64,5 +64,9 @@ colombiano</string>
     <string name="productos_recomendados">PRODUCTOS RECOMENDADOS</string>
     <string name="categorias">CATEGORÍAS</string>
     <string name="skateparks_de_la_semana">SKATEPARKS DE LA SEMANA</string>
+    <string name="skate_desc">Encuentra el sitio perfecto para tu próxima línea y sentirte como un pro</string>
+    <string name="tercer_decrip">Sorpréndete por su versatilidad y cantidad de lugares para poner a prueba tu talento y tenacidad</string>
+    <string name="japon_desc">El lugar perfecto para parchar, aprender y disfrutar de una excelente patinada junto a tu parche, un icónico skatepark</string>
+    <string name="japon_desc_v2">El parche perfecto para aprender y pasarsela bien</string>
 
 </resources>

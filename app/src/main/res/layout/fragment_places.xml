@@ -16,12 +16,19 @@
         <TextView
             android:layout_width="287dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="500dp"
+            android:fontFamily="@font/montserratbold"
             android:text="@string/places_title"
             android:textColor="@color/init_background"
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/skate_desc"
+            android:layout_marginBottom="20dp"/>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
@@ -143,7 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/fontanar_description"
+                        android:text="@string/tercer_decrip"
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:textColor="?android:attr/textColorSecondary" />
 
@@ -192,7 +199,7 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card3"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="400dp"
             android:layout_margin="8dp"
             android:layout_marginBottom="40dp">
 
@@ -219,7 +226,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/japon_DIY_skatepark"
+                        android:text="@string/japon_desc_v2"
                         android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                     <TextView

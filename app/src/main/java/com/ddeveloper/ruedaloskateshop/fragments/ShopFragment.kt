@@ -39,8 +39,7 @@ class ShopFragment : Fragment() {
         val items = mutableListOf<ShopItem>()
 
         val ropa = listOf(
-            Producto(
-                1, "Camiseta DC Shoes", 249000.0, R.drawable.dc_shirt, categoria = "Ropa"),
+            Producto(1, "Camiseta DC Shoes", 249000.0, R.drawable.dc_shirt, categoria = "Ropa"),
             Producto(2, "Buso Nike SB", 349900.0, R.drawable.buso_nike,categoria = "Ropa"),
             Producto(3, "Nike SB Janoski", 329000.0, R.drawable.nike_janoski,categoria = "Ropa")
         )

@@ -62,6 +62,16 @@ class InicioFragment : Fragment() {
             findNavController().navigate(R.id.ropaFragment)
         }
 
+        val btnSkates: Button = view.findViewById(R.id.btnBoards)
+        btnSkates.setOnClickListener{
+            findNavController().navigate(R.id.skatesFragment)
+        }
+
+        val btnAccesorios: Button = view.findViewById(R.id.btnAcces)
+        btnAccesorios.setOnClickListener{
+            findNavController().navigate(R.id.accesFragment)
+        }
+
         startAutoScroll()
     }
 

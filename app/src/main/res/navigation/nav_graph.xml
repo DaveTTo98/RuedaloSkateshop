@@ -63,6 +63,17 @@
         android:name="com.ddeveloper.ruedaloskateshop.fragments.ClothesFragment"
         android:label="RopaFragment">
     </fragment>
+    <fragment
+        android:id="@+id/skatesFragment"
+        android:name="com.ddeveloper.ruedaloskateshop.fragments.SkateFragment"
+        android:label="SkateFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/accesFragment"
+        android:name="com.ddeveloper.ruedaloskateshop.fragments.AccesoriosFragment"
+        android:label="AccesFragment">
+    </fragment>
 
 
 

@@ -13,29 +13,29 @@ import com.ddeveloper.ruedaloskateshop.data.Carrito
 import com.ddeveloper.ruedaloskateshop.model.Producto
 import com.ddeveloper.ruedaloskateshop.model.ShopItem
 
-class SkateFragment : Fragment() {
-    private lateinit var recyclerSkates: RecyclerView
+class AccesoriosFragment : Fragment() {
+    private lateinit var recyclerAcc: RecyclerView
     private lateinit var adapter: ProductAdapter
 
     private val productosLista = listOf(
-        Producto(1, "Board Nyjah Monster edition", 420000.0, R.drawable.nyjah_board, "Skates"),
-        Producto(2, "Board Felipe Gustavo", 400000.0, R.drawable.felipe_gustavo_board, "Skates"),
-        Producto(3, "Board Santa Cruz Star wars Edition", 700000.0, R.drawable.storm_deck, "Skates")
+        Producto(1, "Gorra Vans", 130000.0, R.drawable.vans_cap, "Accesorios"),
+        Producto(2, "Medias Skate Stance Star wars Collection", 170000.0, R.drawable.chewbee_socks, "Accesorios"),
+        Producto(3, "Mochila DC", 149000.0, R.drawable.dc_bag, "Accesorios")
     )
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_skates, container, false)
+    ): View? = inflater.inflate(R.layout.fragment_accesorios, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recyclerSkates = view.findViewById(R.id.recyclerSkates)
-        recyclerSkates.layoutManager = LinearLayoutManager(requireContext())
+        recyclerAcc= view.findViewById(R.id.recyclerAccesorios)
+        recyclerAcc.layoutManager = LinearLayoutManager(requireContext())
 
         // Aquí convertimos los productos en ShopItems
         val shopItems = mutableListOf<ShopItem>()
-        shopItems.add(ShopItem.TituloCategoria("Skates"))
+        shopItems.add(ShopItem.TituloCategoria("Accesorios"))
         productosLista.forEach { producto ->
             shopItems.add(ShopItem.ProductoItem(producto))
         }
@@ -44,6 +44,6 @@ class SkateFragment : Fragment() {
             Carrito.addProduct(producto)
         }
 
-        recyclerSkates.adapter = adapter
+        recyclerAcc.adapter = adapter
     }
 }

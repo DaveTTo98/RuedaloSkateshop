@@ -62,7 +62,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.categoryFragment,
                 R.id.InicioFragment,
                 R.id.mapFragment,
-                R.id.ropaFragment
+                R.id.ropaFragment,
+                R.id.skatesFragment,
+                R.id.accesFragment
             ), drawerLayout
         )
 

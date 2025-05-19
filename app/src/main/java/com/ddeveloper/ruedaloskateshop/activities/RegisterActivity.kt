@@ -4,19 +4,13 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Patterns
-import android.widget.Button
-import android.widget.CheckBox
-import android.util.Log
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.ddeveloper.ruedaloskateshop.R
-import org.intellij.lang.annotations.Pattern
 
-class RegisterActivity: AppCompatActivity()  {
+class RegisterActivity : AppCompatActivity() {
 
-    //VARIABLES
+    // VARIABLES
     private lateinit var nameText: EditText
     private lateinit var lastnameText: EditText
     private lateinit var emailText: EditText
@@ -26,40 +20,43 @@ class RegisterActivity: AppCompatActivity()  {
     private lateinit var termsCheck: CheckBox
     private lateinit var joinButton: Button
     private lateinit var textLogin: TextView
+    private lateinit var seeTerms: TextView
 
-    //SAVE USER INFO
-
-        private lateinit var sharedPreferences: SharedPreferences
+    // SAVE USER INFO
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-
-        //INITIALIZE VARIABLES
-        //USER DATA
+        // INICIALIZAR VARIABLES
         sharedPreferences = getSharedPreferences("userData", MODE_PRIVATE)
 
-        //USER FIELDS
         nameText = findViewById(R.id.name_field)
         lastnameText = findViewById(R.id.lastname_field)
         emailText = findViewById(R.id.email_field)
-        telText = findViewById(R.id.email_field)
+        telText = findViewById(R.id.tel_field)
         passwordText = findViewById(R.id.password_field)
         repPasswordText = findViewById(R.id.rep_password_field)
         termsCheck = findViewById(R.id.terms_check)
         joinButton = findViewById(R.id.join_button)
         textLogin = findViewById(R.id.textLogin)
+        seeTerms = findViewById(R.id.terms_conditions)
 
-        //LISTENER LOGIN TEXT
+        // Abrir actividad de login
         textLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
         }
 
-        joinButton.setOnClickListener{
+        // Mostrar términos y condiciones
+        seeTerms.setOnClickListener {
+            showTermsDialog()
+        }
+
+        // Registro
+        joinButton.setOnClickListener {
             if (validateFields()) {
                 saveUserData()
                 val intent = Intent(this, LoginActivity::class.java)
@@ -78,49 +75,42 @@ class RegisterActivity: AppCompatActivity()  {
         val rep_pass_ver = repPasswordText.text.toString().trim()
         val terms_ver = termsCheck.isChecked
 
-        //VALIDATION FIELDS
-
-        if (name_ver.isEmpty()){
-            //show errror message
+        if (name_ver.isEmpty()) {
             Toast.makeText(this, "El campo nombre es obligatorio", Toast.LENGTH_SHORT).show()
             return false
         }
-        if(lastname_ver.isEmpty()){
+        if (lastname_ver.isEmpty()) {
             Toast.makeText(this, "El campo apellidos es obligatorio", Toast.LENGTH_SHORT).show()
             return false
         }
-        if (email_ver.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email_ver).matches()){
-            Toast.makeText(this, "El campo email es obligatorio", Toast.LENGTH_SHORT).show()
+        if (email_ver.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email_ver).matches()) {
+            Toast.makeText(this, "El campo email es obligatorio o inválido", Toast.LENGTH_SHORT).show()
             return false
         }
-        if (tel_ver.isEmpty()){
-            Toast.makeText(this, "El campo telefono es obligatorio", Toast.LENGTH_SHORT).show()
+        if (tel_ver.isEmpty()) {
+            Toast.makeText(this, "El campo teléfono es obligatorio", Toast.LENGTH_SHORT).show()
             return false
         }
-        if(pass_ver.isEmpty()){
+        if (pass_ver.isEmpty()) {
             Toast.makeText(this, "El campo contraseña es obligatorio", Toast.LENGTH_SHORT).show()
             return false
         }
-        if(rep_pass_ver.isEmpty()){
+        if (rep_pass_ver.isEmpty()) {
             Toast.makeText(this, "El campo repetir contraseña es obligatorio", Toast.LENGTH_SHORT).show()
             return false
         }
-        if(pass_ver != rep_pass_ver){
-            Toast.makeText(this, "las contraseñas no cooinciden", Toast.LENGTH_SHORT).show()
+        if (pass_ver != rep_pass_ver) {
+            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             return false
         }
-
-        if(!terms_ver){
+        if (!terms_ver) {
             Toast.makeText(this, "Debes aceptar los términos y condiciones", Toast.LENGTH_SHORT).show()
             return false
         }
         return true
-
     }
 
-    //USER DATA VALIDATION
-    private fun saveUserData(){
-        //edit user data
+    private fun saveUserData() {
         val editor = sharedPreferences.edit()
         editor.putString("nombre", nameText.text.toString().trim())
         editor.putString("apellidos", lastnameText.text.toString().trim())
@@ -130,24 +120,25 @@ class RegisterActivity: AppCompatActivity()  {
         editor.putString("rep_contraseña", repPasswordText.text.toString().trim())
         editor.apply()
 
-        Log.d("Register Activity", "saveUserData: Datos del usuario guardados ")
-
-        //MENSAJE DE REGISTRO EXITOSO
         Toast.makeText(this, "Te has registrado con éxito", Toast.LENGTH_SHORT).show()
-
     }
 
+    // MOSTRAR POPUP DE TÉRMINOS Y CONDICIONES
+    private fun showTermsDialog() {
+        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+        val view = layoutInflater.inflate(R.layout.dialog_terms, null)
+        val textView = view.findViewById<TextView>(R.id.textTerms)
 
+        val inputStream = resources.openRawResource(R.raw.terminos_y_condiciones_ruedalo)
+        val text = inputStream.bufferedReader().use { it.readText() }
 
+        textView.text = text
 
-
-
-
-
-
-
-
-
-
-
+        builder.setView(view)
+            .setTitle("Términos y Condiciones")
+            .setPositiveButton("Aceptar") { dialog, _ -> dialog.dismiss() }
+            .setCancelable(true)
+            .create()
+            .show()
+    }
 }
